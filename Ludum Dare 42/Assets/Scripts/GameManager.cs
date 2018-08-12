@@ -23,8 +23,5 @@ public class GameManager : MonoBehaviour {
     public void DeleteFile() 
     {
         Debug.Log("Deleting File");
-        EncryptedFileScript encryptedFile = FindObjectOfType<EncryptedFileScript>();
-        FindObjectOfType<StorageManager>().storageOccupied -= encryptedFile.weight;
-        Destroy(encryptedFile);
     }
 }

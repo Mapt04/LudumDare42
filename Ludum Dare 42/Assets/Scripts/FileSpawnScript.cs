@@ -6,11 +6,8 @@ public class FileSpawnScript : MonoBehaviour {
 
     public Transform[] spawnPositions;
     public float spawnDelay;
-    public GameObject encryptedFile;
     private GameObject encryptedFileInstance;
-    public GameObject canvas;
-    public Transform decryptorAppSpawn;
-    public EncryptedFileScript encryptedFileScript;
+    public GameObject encryptedFile;
 
 	// Use this for initialization
 	void Start () 
@@ -23,8 +20,6 @@ public class FileSpawnScript : MonoBehaviour {
     {
         int spawnPositionIndex = Random.Range(0, spawnPositions.Length);
         encryptedFileInstance = Instantiate(encryptedFile, spawnPositions[spawnPositionIndex].position, spawnPositions[spawnPositionIndex].rotation);
-        encryptedFileInstance.transform.SetParent(canvas.transform);
-        encryptedFileInstance.transform.position = spawnPositions[spawnPositionIndex].position;
     }
 	
 }
