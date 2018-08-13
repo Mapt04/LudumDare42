@@ -6,7 +6,7 @@ using TMPro;
 public class EliminatedFilesCounter : MonoBehaviour {
 
     public TextMeshProUGUI eliminatedFilesText;
-    private int filesEliminated;
+    public int filesEliminated;
 
 	// Use this for initialization
 	void Start () {

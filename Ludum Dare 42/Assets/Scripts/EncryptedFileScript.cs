@@ -5,18 +5,16 @@ using UnityEngine;
 public class EncryptedFileScript : MonoBehaviour {
 
     public float weight;
-    public GameObject[] decryptorApps;
     private Transform decryptorAppSpawn;
-    private int decryptorAppIndex;
     public GameObject decryptorApp;
+    public GameObject file;
+
 
 	// Use this for initialization
 	void Start () 
     {
         weight = Random.Range(5, 15);
         FindObjectOfType<StorageManager>().storageOccupied += weight;
-        decryptorAppSpawn = transform;
-        decryptorAppSpawn.position = new Vector3(336f, 300, 0);
 	}
 	
 	// Update is called once per frame
@@ -25,11 +23,14 @@ public class EncryptedFileScript : MonoBehaviour {
         
 	}
 
-    public void SpawnDecryptorApp () 
+    private void OnMouseDown()
     {
-        decryptorAppIndex = Random.Range((int)0, decryptorApps.Length);
-        decryptorApp = decryptorApps[decryptorAppIndex];
-        decryptorApp = Instantiate(decryptorApps[decryptorAppIndex], decryptorAppSpawn);
+        if (!FindObjectOfType<DecryptorController>().isDecrypting) 
+        {
+            FindObjectOfType<DecryptorController>().Spawn();
+            FindObjectOfType<FileSpawnScript>().activeFile = file;
+        }
 
     }
+
 }

@@ -50,7 +50,11 @@ public class CharacterMovement : MonoBehaviour {
 
         else if (col.CompareTag("Exit")) 
         {
-            FindObjectOfType<GameManager>().DeleteFile();
+            FindObjectOfType<DecryptorController>().Delete();
+            FindObjectOfType<StorageManager>().storageOccupied -= FindObjectOfType<EncryptedFileScript>().weight;
+            Destroy(FindObjectOfType<FileSpawnScript>().activeFile);
+            FindObjectOfType<EliminatedFilesCounter>().filesEliminated += 1;
+
                                            
         }
     }

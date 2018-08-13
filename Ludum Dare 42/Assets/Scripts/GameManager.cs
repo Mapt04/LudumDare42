@@ -19,9 +19,4 @@ public class GameManager : MonoBehaviour {
     {
         SceneManager.LoadScene("Menu");
     }
-
-    public void DeleteFile() 
-    {
-        Debug.Log("Deleting File");
-    }
 }

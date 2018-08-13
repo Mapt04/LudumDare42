@@ -8,18 +8,22 @@ public class FileSpawnScript : MonoBehaviour {
     public float spawnDelay;
     private GameObject encryptedFileInstance;
     public GameObject encryptedFile;
+    public GameObject activeFile;
 
 	// Use this for initialization
 	void Start () 
     {
         Spawn();
-        InvokeRepeating("Spawn", spawnDelay, spawnDelay);
+        InvokeRepeating("Spawn", spawnDelay, spawnDelay - 0.5f);
 	}
 
-    void Spawn () 
+    public void Spawn () 
     {
-        int spawnPositionIndex = Random.Range(0, spawnPositions.Length);
+        int spawnPositionIndex = Random.Range(0, spawnPositions.Length - 1);
         encryptedFileInstance = Instantiate(encryptedFile, spawnPositions[spawnPositionIndex].position, spawnPositions[spawnPositionIndex].rotation);
+        spawnDelay -= 0.1f;
+        FindObjectOfType<CharacterMovement>().movementSpeed += 10f;
     }
+
 	
 }
