@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour {
     public void Play()
     {
         SceneManager.LoadScene("Main");
+        FindObjectOfType<EliminatedFilesCounter>();
     }
 
     public void Exit()

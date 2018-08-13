@@ -6,15 +6,16 @@ using TMPro;
 public class EliminatedFilesCounter : MonoBehaviour {
 
     public TextMeshProUGUI eliminatedFilesText;
-    public int filesEliminated;
+    public int filesEliminated = 0;
 
 	// Use this for initialization
 	void Start () {
-        filesEliminated = 0;
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
         eliminatedFilesText.text = "Files Eliminated: " + filesEliminated;
 	}
+
 }

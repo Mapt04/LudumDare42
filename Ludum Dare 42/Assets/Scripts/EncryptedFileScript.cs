@@ -7,7 +7,6 @@ public class EncryptedFileScript : MonoBehaviour {
     public float weight;
     private Transform decryptorAppSpawn;
     public GameObject decryptorApp;
-    public GameObject file;
 
 
 	// Use this for initialization
@@ -28,7 +27,7 @@ public class EncryptedFileScript : MonoBehaviour {
         if (!FindObjectOfType<DecryptorController>().isDecrypting) 
         {
             FindObjectOfType<DecryptorController>().Spawn();
-            FindObjectOfType<FileSpawnScript>().activeFile = file;
+            FindObjectOfType<FileSpawnScript>().activeFile = gameObject;
         }
 
     }

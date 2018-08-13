@@ -54,7 +54,8 @@ public class CharacterMovement : MonoBehaviour {
             FindObjectOfType<StorageManager>().storageOccupied -= FindObjectOfType<EncryptedFileScript>().weight;
             Destroy(FindObjectOfType<FileSpawnScript>().activeFile);
             FindObjectOfType<EliminatedFilesCounter>().filesEliminated += 1;
-
+            movementSpeed += 10;
+            FindObjectOfType<FileSpawnScript>().spawnDelay -= 3f;
                                            
         }
     }

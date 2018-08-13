@@ -19,10 +19,8 @@ public class FileSpawnScript : MonoBehaviour {
 
     public void Spawn () 
     {
-        int spawnPositionIndex = Random.Range(0, spawnPositions.Length - 1);
+        int spawnPositionIndex = Random.Range(0, spawnPositions.Length);
         encryptedFileInstance = Instantiate(encryptedFile, spawnPositions[spawnPositionIndex].position, spawnPositions[spawnPositionIndex].rotation);
-        spawnDelay -= 0.1f;
-        FindObjectOfType<CharacterMovement>().movementSpeed += 10f;
     }
 
 	

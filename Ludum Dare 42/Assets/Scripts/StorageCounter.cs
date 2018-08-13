@@ -21,7 +21,7 @@ public class StorageCounter : MonoBehaviour {
         storageOccupied = FindObjectOfType<StorageManager>().storageOccupied;
         storageCapacity = FindObjectOfType<StorageManager>().storageCapacity;
         storageAvailable = storageCapacity - storageOccupied;
-        storageCounter.text = (storageAvailable + "GB available of " + storageCapacity + "GB");
+        storageCounter.text = (storageAvailable - (storageAvailable % 0.1) + "GB available of " + storageCapacity + "GB");
         storageBar.fillAmount = storageOccupied / storageCapacity;
     }
 }

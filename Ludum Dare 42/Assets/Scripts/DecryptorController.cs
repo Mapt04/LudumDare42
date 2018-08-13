@@ -22,7 +22,7 @@ public class DecryptorController : MonoBehaviour {
     {
         decryptorApp = Random.Range(0, decryptorApps.Length);
         decryptorAppInstance = Instantiate(decryptorApps[decryptorApp], DecryptorAppSpawn.position, DecryptorAppSpawn.rotation);
-        decryptorAppInstance.transform.SetParent(canvas);
+        decryptorAppInstance.transform.SetParent(canvas, false);
         isDecrypting = true;
     }
 
